@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Personal & Medical Information Form</title>
+    <style>
+        body {
+            background-image:url("person.jpeg");
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 0;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+        input[type="text"], input[type="email"], input[type="date"], input[type="tel"], select, textarea {
+            width: 80%; /* Reduced width */
+            padding: 8px; /* Reduced padding */
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input[type="file"] {
+            margin-bottom: 15px;
+        }
+        input[type="submit"] {
+            width: 80%; /* Reduced button width */
+            padding: 10px; /* Reduced button padding */
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="text-align:center; color:blue">Accessible Personal & Medical Information Form</h2>
+
+<form action="/submit_form" method="post" enctype="multipart/form-data" aria-label="Personal and Medical Information Form">
+    <!-- Personal Information -->
+    <h3>Personal Information</h3>
+
+    <label for="name">Full Name <span aria-hidden="true">*</span></label>
+    <input type="text" id="name" name="name" placeholder="Your full name" aria-required="true" required>
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" placeholder="Your email address">
+
+    <label for="phone">Phone Number <span aria-hidden="true">*</span></label>
+    <input type="tel" id="phone" name="phone" placeholder="Your phone number" aria-required="true" required>
+
+    <label for="gender">Gender <span aria-hidden="true">*</span></label>
+    <select id="gender" name="gender" aria-required="true" required>
+        <option value="">Please select</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+    </select>
+
+    <label for="address">Address <span aria-hidden="true">*</span></label>
+    <input type="text" id="address" name="address" placeholder="Your address" aria-required="true" required>
+
+    <label for="dob">Date of Birth <span aria-hidden="true">*</span></label>
+    <input type="date" id="dob" name="dob" aria-required="true" required>
+
+    <label for="blood_group">Blood Group <span aria-hidden="true">*</span></label>
+    <select id="blood_group" name="blood_group" aria-required="true" required>
+        <option value="">Please select</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+    </select>
+
+    <!-- Medical Information -->
+    <h3>Medical Information</h3>
+
+    <label for="medical_reports">Upload Medical Reports</label>
+    <input type="file" id="medical_reports" name="medical_reports" multiple>
+
+    <label for="xray">Upload X-Rays</label>
+    <input type="file" id="xray" name="xray" multiple>
+
+    <label for="scans">Upload Scans</label>
+    <input type="file" id="scans" name="scans" multiple>
+
+    <label for="health_problems">Health Problems</label>
+    <textarea id="health_problems" name="health_problems" rows="3" placeholder="Describe any health problems"></textarea>
+
+    <label for="medications">Medications (Name and Time)</label>
+    <textarea id="medications" name="medications" rows="3" placeholder="List medications and time of dosage"></textarea>
+
+    <!-- Guardian Information -->
+    <h3>Guardian Information</h3>
+
+    <label for="guardian_name">Guardian's Full Name <span aria-hidden="true">*</span></label>
+    <input type="text" id="guardian_name" name="guardian_name" placeholder="Guardian's full name" aria-required="true" required>
+
+    <label for="guardian_phone">Guardian's Phone Number <span aria-hidden="true">*</span></label>
+    <input type="tel" id="guardian_phone" name="guardian_phone" placeholder="Guardian's phone number" aria-required="true" required>
+
+    <label for="guardian_email">Guardian's Email Address</label>
+    <input type="email" id="guardian_email" name="guardian_email" placeholder="Guardian's email address">
+
+    <label for="guardian_address">Guardian's Address</label>
+    <input type="text" id="guardian_address" name="guardian_address" placeholder="Guardian's address">
+
+    <label for="relationship">Relationship with User <span aria-hidden="true">*</span></label>
+    <input type="text" id="relationship" name="relationship" placeholder="Relationship with the user" aria-required="true" required>
+
+    <!-- Submit Button -->
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
